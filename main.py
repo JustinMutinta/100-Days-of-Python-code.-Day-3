@@ -1,37 +1,44 @@
-"""
-The Love Calculator will calculate the probability of love between you and another person.
-You will enter your name and their name.
-After adding the number of times the letters in 'true love' show up will decide how compatible you are.
-"""
+print('''
+*******************************************************************************
+          |                   |                  |                     |
+ _________|________________.=""_;=.______________|_____________________|_______
+|                   |  ,-"_,=""     `"=.|                  |
+|___________________|__"=._o`"-._        `"=.______________|___________________
+          |                `"=._o`"=._      _`"=._                     |
+ _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+ _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
+|                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
+|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+/______/______/______/______/______/______/______/______/______/______/_____ /
+*******************************************************************************
+''')
 
-print("Welcome to the Love Calculator")
-name1 = input("What is your name? \n")
-name2 = input("What is their name? \n")
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.")
 
-#.lower()
-#.count("a")
+option1 = input("You're at a crossroad, where do you want to go? Type \"Left\" or \"Right\" ").lower()
 
-combined_string = name1 + name2
-lower_case_string = combined_string.lower()
-
-t = lower_case_string.count("t")
-r = lower_case_string.count("r")
-u = lower_case_string.count("u")
-e = lower_case_string.count("e")
-
-l = lower_case_string.count("l")
-o = lower_case_string.count("o")
-v = lower_case_string.count("v")
-e = lower_case_string.count("e")
-
-score = str(t + r + u + e) + str(l + o + v + e)
-int_score = int(score)
-
-#print(score)
-
-if (int_score < 10) or (int_score > 90):
-    print(f"Your score is {int_score}, you go together like coke and mentos")
-elif (int_score >= 40) or (int_score <= 50):
-    print(f"Your score is {int_score}, you are alright together")
+if option1 == "left":
+    option2 = input("You've come to a lake. There is an island in the middle. Type \'Swim\' to swim across."
+                    " Type \'Wait\' to wait ").lower()
+    if option2 == "swim":
+        print("You got attached by an angry trout. Game Over")
+    else:
+        option3 = input("You arrive at the island unharmed. There is a house with 3 doors. Blue, Red, or Yellow,"
+                        " which one do you choose? ").lower()
+        if (option3 == "blue") or (option3 == "red"):
+            print("You were attacked by an assassin. Game Over")
+        else:
+            print("You found the treasure. You Win!")
+elif option1 == "right":
+    print("You fell into a hole. Game Over")
 else:
-    print(f"Your score is {int_score}")
+    print("Wrong option. Good bye")
